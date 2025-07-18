@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #intro {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #004d40, #00bfa5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            overflow: hidden;
+        }
+
+        #intro.hidden {
+            display: none !important;
+        }
+
+        #intro-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .loader-container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(45deg);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 450px;
+            height: 450px;
+            z-index: 1;
+        }
+
+        .loader-large {
+            position: absolute;
+            width: 350px;
+            height: 350px;
+            border: 4px solid rgba(255, 255, 255, 0.2);
+            border-top-color: #00ffcc;
+            animation: rotateSquareLarge 4s alternate-reverse infinite;
+            border-radius: 4px;
+            transform-origin: center;
+        }
+
+        .loader {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border: 4px solid rgba(255, 255, 255, 0.2);
+            border-top-color: #00ffcc;
+            animation: rotateSquareSmall 2s alternate-reverse infinite;
+            border-radius: 4px;
+            transform-origin: center;
+        }
+
+        @keyframes rotateSquareLarge {
+            0% {
+                transform: rotate(0deg) scale(1);
+            }
+
+            100% {
+                transform: rotate(360deg) scale(1.8);
+            }
+        }
+
+        @keyframes rotateSquareSmall {
+            0% {
+                transform: rotate(0deg) scale(1);
+            }
+
+            100% {
+                transform: rotate(-360deg) scale(0.8);
+            }
+        }
+
+        #intro-content {
+            position: absolute;
+            text-align: center;
+            color: #ffffff;
+            font-family: 'Arial', sans-serif;
+            z-index: 1;
+        }
+
+        #intro-content h1 {
+            font-size: 3rem;
+            font-weight: bold;
+            text-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+        }
+
+        #intro-content p {
+            font-size: 1.2rem;
+            margin-top: 10px;
+            text-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+        }
+
+        #intro-content button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 1rem;
+            color: #004d40;
+            background: #00ffcc;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        #intro-content button:hover {
+            background: #00e6b8;
+            box-shadow: 0 4px 10px rgba(0, 255, 170, 0.5);
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="intro">
+        <video autoplay muted id="intro-video">
+            <source src="C:\Pythone files\individual\individual_FSD\mainbg.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="loader-container">
+            <div class="loader-large">
+                <div class="loader"></div>
+            </div>
+        </div>
+        <div id="intro-content">
+            <h1>Vyom Kalariya</h1>
+            <p>Empowering Code | Elevating Ideas</p>
+            <a href="login.html"><button type="button" onclick="closeIntro()">Start Journey</button></a>
+        </div>
+    </div>
+
+    <script>
+        function closeIntro() {
+            const intro = document.getElementById('intro');
+            if (intro) {
+                intro.classList.add('hidden');
+            }
+        }
+    </script>
+
+</body>
+
+</html>

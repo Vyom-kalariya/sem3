@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Downloads Carousel</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #064e3b;
+            color: #d1fae5;
+            text-align: center;
+            padding: 20px;
+        }
+
+        h2,
+        h3 {
+            color: #a7f3d0;
+        }
+
+        .carousel-container {
+            width: 1000px;
+            height: 500px;
+            margin: 20px auto;
+            overflow: hidden;
+            position: relative;
+            background-color: #10b981;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .carousel-slide {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+            height: 100%;
+        }
+
+        .carousel-item {
+            min-width: 100%;
+            flex: 0 0 auto;
+            height: 100%;
+            text-align: center;
+        }
+
+        .carousel-item img {
+            max-width: 100%;
+            max-height: 100%;
+            display: block;
+            margin: auto;
+            cursor: pointer;
+            object-fit: contain;
+            border-radius: 5px;
+        }
+
+        .carousel-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 10;
+            background-color: #047857;
+            color: white;
+            padding: 10px 15px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .carousel-nav:hover {
+            background-color: #065f46;
+        }
+
+        .carousel-prev {
+            left: 10px;
+        }
+
+        .carousel-next {
+            right: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Download Section</h2>
+
+    <h3>Resumes</h3>
+    <div class="carousel-container">
+        <div class="carousel-slide" id="resumeCarousel">
+            <div class="carousel-item"><img src="resume_icon.png" alt="Resume 1" onclick="downloadFile('resume1.pdf')">
+            </div>
+            <div class="carousel-item"><img src="2r.png" alt="Resume 2" onclick="downloadFile('resume2.pdf')"></div>
+            <div class="carousel-item"><img src="1r.png" alt="Resume 3" onclick="downloadFile('resume3.pdf')"></div>
+            <div class="carousel-item"><img src="4r.png" alt="Resume 4" onclick="downloadFile('resume4.pdf')"></div>
+        </div>
+        <button class="carousel-nav carousel-prev" onclick="moveSlide('resumeCarousel', -1)">Prev</button>
+        <button class="carousel-nav carousel-next" onclick="moveSlide('resumeCarousel', 1)">Next</button>
+    </div>
+
+    <h3>Marksheets</h3>
+    <div class="carousel-container">
+        <div class="carousel-slide" id="marksheetCarousel">
+            <div class="carousel-item"><img src="marksheet icon.jpg" alt="Marksheet 1"
+                    onclick="downloadFile('C:/Users/vyom2/OneDrive/Pictures/IMP THINGS/WhatsApp Image 2024-01-17 at 19.28.22_6d1a200f.jpg')">
+            </div>
+            <div class="carousel-item"><img
+                    src="C:/Users/vyom2/OneDrive/Pictures/IMP THINGS/WhatsApp Image 2024-01-17 at 19.28.22_6d1a200f.jpg"
+                    alt="Marksheet 2"
+                    onclick="downloadFile('C:/Users/vyom2/OneDrive/Pictures/IMP THINGS/WhatsApp Image 2024-01-17 at 19.28.22_6d1a200f.jpg')">
+            </div>
+        </div>
+        <button class="carousel-nav carousel-prev" onclick="moveSlide('marksheetCarousel', -1)">Prev</button>
+        <button class="carousel-nav carousel-next" onclick="moveSlide('marksheetCarousel', 1)">Next</button>
+    </div>
+
+    <h3>Certificates</h3>
+    <div class="carousel-container">
+        <div class="carousel-slide" id="certificateCarousel">
+            <div class="carousel-item"><img src="1c.png" alt="Certificate 1" onclick="downloadFile('111_CS&IT.pdf')">
+            </div>
+            <div class="carousel-item"><img src="2c.png" alt="Certificate 1"
+                    onclick="downloadFile('158_CS&IT_2nd course.pdf')"></div>
+            <div class="carousel-item"><img src="3c.png" alt="Certificate 1" onclick="downloadFile('158_CS&IT.pdf')">
+            </div>
+            <div class="carousel-item"><img src="4c.png" alt="Certificate 1" onclick="downloadFile('196_D6_CS&IT.pdf')">
+            </div>
+
+        </div>
+        <button class="carousel-nav carousel-prev" onclick="moveSlide('certificateCarousel', -1)">Prev</button>
+        <button class="carousel-nav carousel-next" onclick="moveSlide('certificateCarousel', 1)">Next</button>
+    </div>
+
+    <script>
+        function moveSlide(carouselId, direction) {
+            const carousel = document.getElementById(carouselId);
+            const items = carousel.querySelectorAll('.carousel-item');
+            const totalItems = items.length;
+            let currentIndex = parseInt(carousel.getAttribute('data-index')) || 0;
+
+            currentIndex += direction;
+            if (currentIndex < 0) currentIndex = totalItems - 1;
+            if (currentIndex >= totalItems) currentIndex = 0;
+
+            carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
+            carousel.setAttribute('data-index', currentIndex);
+        }
+
+        function downloadFile(filename) {
+            const link = document.createElement('a');
+            link.href = filename;
+            link.download = filename;
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
+    </script>
+</body>
+
+</html>

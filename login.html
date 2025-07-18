@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #e0f2f7;
+            color: #212529;
+        }
+
+        .login-container {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 350px;
+            border-radius: 90%;
+        }
+
+        h2 {
+            color: #2e8b57;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #343a40;
+        }
+
+        input{
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 16px;
+            border: 1px solid #ced4da;
+            border-radius: 5px;
+            box-sizing: border-box;
+            transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+        }
+
+        input:focus {
+            border-color: #2e8b57;
+            outline: 0;
+            box-shadow: 0 0 0 0.2rem rgba(46, 139, 87, 0.25);
+        }
+
+        button {
+            background-color: #2e8b57;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+            transition: background-color 0.15s ease-in-out;
+        }
+
+        button:hover {
+            background-color: #277b4a;
+        }
+
+        .error-message {
+            color: #dc3545;
+            margin-top: 10px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+   
+    <div class="login-container">
+        <h2>Enter<br> User name & password <br> (Pre-Users)</h2>
+        <form id="loginForm">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required><br><br>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required><br><br>
+
+            <button type="submit">Submit</button>
+
+            <div id="errorMessage" class="error-message"></div>
+        </form>
+    </div>  
+
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            const username = document.getElementById('username').value; 
+            const password = document.getElementById('password').value;
+            const errorMessage = document.getElementById('errorMessage');
+
+            const users = {
+                "vyom": "1234",
+                "something": "something",
+                "marks": "full"
+            };
+
+            if (users.hasOwnProperty(username) && users[username] === password) {
+                window.location.href = "next_gen_profile.html";
+            } else {
+                errorMessage.textContent = "Wrong username or password";
+            }
+        });
+    </script>
+
+
+</body>
+
+</html>

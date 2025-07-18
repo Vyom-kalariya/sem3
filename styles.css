@@ -1,0 +1,387 @@
+
+.btn {
+    background-color: #2ecc71 !important;
+    color: white !important;
+    border: none !important;
+    padding: 10px 20px !important;
+    font-size: 1rem !important;
+    border-radius: 25px !important;
+    box-shadow: 0 4px 8px rgba(46, 204, 113, 0.5) !important;
+    transition: all 0.3s ease !important;
+}
+
+.btn:hover {
+    background-color: #27ae60 !important;
+    box-shadow: 0 8px 16px rgba(46, 204, 113, 0.8) !important;
+    transform: translateY(-2px) !important;
+}
+
+/* Header and Navigation Styling */
+header {
+    background-color: #004d40;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    background-color: #003f34;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+    padding: 10px;
+    transition: background-color 0.3s;
+}
+
+nav ul li a:hover {
+    background-color: #002821;
+    border-radius: 5px;
+}
+
+/* Profile Section */
+.profile {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.profile img {
+    width: 300px;
+    height: 300px;
+    border-radius: 15%;
+    margin-right: 20px;
+}
+
+/* Name Styling */
+
+
+.line {
+    display: inline-block;
+    width: 0;
+    height: 6px;
+    background-color: #004d40;
+    margin-left: 10px;
+    margin-right: 10px;
+    animation: extendLineH1 5s 3s forwards;
+}
+
+@keyframes extendLineH1 {
+    0% { width: 0; background-color: #004d40; }
+    100% { width: 300px; background-color: #00e6b8; }
+}
+
+h2 span.line {
+    display: inline-block;
+    width: 0;
+    height: 6px;
+    background-color: #004d40;
+    margin-left: 10px;
+    margin-right: 10px;
+    animation: extendLineH2 5s 5s forwards;
+}
+
+@keyframes extendLineH2 {
+    0% { width: 0; background-color: #004d40; }
+    100% { width: 300px; background-color: #00e6b8; }
+}
+
+
+/* Projects Section */
+#projects {
+    padding: 40px;
+    background-color: #ffffff;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.project {
+    margin-bottom: 20px;
+}
+
+.project-demo {
+    display: flex;
+    align-items: center;
+}
+
+.project-demo img {
+    max-width: 200px;
+    margin-right: 10px;
+}
+
+.project-demo button {
+    background-color: #004d40;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.project-demo button:hover {
+    background-color: #003f34;
+}
+
+/* Skills Section */
+#skills {
+    padding: 40px;
+    background-color: #f3f3f3;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+ul li {
+    margin: 10px 0;
+}
+
+/* Footer Styling */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #004d40;
+    color: white;
+}
+
+footer a {
+    color: #00ffcc;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Download Section */
+#downloads {
+    margin-top: 50px;
+    text-align: center;
+}
+
+#downloads button {
+    margin-bottom: 20px;
+    padding: 10px 20px;
+    background: #00bfa5;
+    color: #fff;
+    border: none;
+    border-radius: 25px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+#downloads button:hover {
+    background: #00e6b8;
+}
+
+#downloadFiles {
+    margin-top: 20px;
+    display: none;
+}
+
+#downloadFiles ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.downloader {
+    margin-bottom: 10px;
+}
+
+.downloader a {
+    text-decoration: none;
+    font-size: 1.1rem;
+    color: #004d40;
+    border: 2px solid #00bfa5;
+    padding: 8px 20px;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+}
+
+.downloader a:hover {
+    background: #00bfa5;
+    color: #fff;
+    border-color: #00e6b8;
+}
+
+/* Card Styling */
+.card {
+    background-color: #e6ffe6;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    border-radius: 8px;
+    margin: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 255, 170, 0.7);
+}
+
+.card-body {
+    padding: 15px;
+}
+
+.card-title {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #004d40;
+}
+
+.card-text {
+    font-size: 1rem;
+    color: #333;
+}
+
+.card-img-top {
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px 8px 0 0;
+}
+
+.btn-success {
+    background-color: #00bfa5;
+    color: white;
+    border-radius: 5px;
+    padding: 10px 15px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-success:hover {
+    background-color: #00e6b8;
+}
+/* the progresss things */
+/* Skill Bar Base Style */
+.skill-bar {
+    width: 0%;  /* Start with 1% width */
+    height: 15px;  /* Set height to 10px */
+    background-color: #006400;
+    border-radius: 5px;  /* Slight rounding on the edges */
+    margin-top: 5px;
+    /* Removed the animation from here to stop it from running on page load */
+}
+
+/* Animation to expand the bar from 1% to 8% */
+@keyframes expand-bar {
+    0% {
+        width: 0%;  /* Start at 1% */
+    }
+
+    100% {
+        width: 6%;  /* Final width */
+    }
+}
+
+/* When the progress section is activated */
+#progress.active .skill-bar {
+    animation: expand-bar 3s ease-in-out forwards;  /* Animation will trigger only when active class is added */
+}
+
+/* Additional styling for spacing between bars */
+.skill-bars {
+    display: flex;
+    gap: 10px;  /* Space between the bars */
+}
+
+/* Style for the button */
+.progress-btn {
+    background-color: #006400;
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: block;
+    margin: 20px auto;
+}
+
+.progress-btn:hover {
+    background-color: #004d00;
+}
+
+
+/* new*/
+.experience-card {
+    position: relative;
+    overflow: visible; /* Allow the hover text to extend beyond the card */
+    background-color: #e6ffe6;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-bottom: 20px; /* Ensure space for the hover text */
+}
+
+.experience-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 255, 170, 0.7);
+}
+
+.hover-text {
+    position: absolute;
+    left: 0;
+    bottom: -90%; /* Adjust this value based on the text height */
+    width: 100%;
+    background-color: #006400; /* Emerald green */
+    color: #fff;
+    padding: 10px;
+    font-size: 0.9rem;
+    text-align: justify;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    border-radius: 8px;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.experience-card:hover .hover-text {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* 
+this is all slide showwwwww
+
+*/
+
+
+.slideshow-container {
+    position: relative;
+    width: 500px; /* Set width to 500px */
+    height: 400px; /* Set height to 400px */
+    overflow: hidden;
+    margin: 0 auto; /* Center the slideshow horizontally */
+}
+
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    background-size: cover;
+    background-position: center;
+}
+
+.slide.active {
+    opacity: 1;
+}
+
